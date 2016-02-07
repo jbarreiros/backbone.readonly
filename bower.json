@@ -1,0 +1,31 @@
+{
+  "name": "backbone.readonly",
+  "description": "Read-only backbone models and collections",
+  "main": "dist/backbone.readonly.min.js",
+  "authors": [
+    "John Barreiros <johnbarreiros2@gmail.com>"
+  ],
+  "license": "ISC",
+  "private": true,
+  "keywords": [
+    "backbone"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "backbone": "^1.2.3",
+    "underscore": "^1.8.3"
+  }
+}

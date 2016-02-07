@@ -1,0 +1,74 @@
+{
+  "name": "backbone.readonly",
+  "version": "0.1.0",
+  "description": "Read-only backbone models and collections",
+  "main": "src/index.js",
+  "browser": "dist/backbone.readonly.min.js",
+  "keywords": [
+    "backbone"
+  ],
+  "author": "John Barreiros <johnbarreiros2@gmail.com>",
+  "private": true,
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "browserify-shim": "^3.8.12",
+    "chai": "^3.5.0",
+    "jscs": "^2.9.0",
+    "jshint": "^2.9.1",
+    "karma": "^0.13.19",
+    "karma-browserify": "^5.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha": "^0.2.1",
+    "karma-mocha-reporter": "^1.1.5",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sinon": "^1.0.4",
+    "mocha": "^2.4.5",
+    "npm-run-all": "^1.5.1",
+    "phantomjs-prebuilt": "^2.1.4",
+    "rimraf": "^2.5.1",
+    "sinon": "^1.17.3",
+    "uglify-js": "^2.6.1",
+    "watch": "^0.17.1",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "underscore": "^1.8.3",
+    "jquery": "^2.2.0"
+  },
+  "config": {
+    "browserify_args": "-o dist/backbone.readonly.js -d -x jquery -x underscore -x backbone -s Backbone.ReadOnly"
+  },
+  "scripts": {
+    "preinstall": "",
+    "postinstall": "npm run build",
+    "clean": "rimraf dist/*",
+    "prebuild": "npm-run-all clean test",
+    "build": "npm run build:js",
+    "build:js": "browserify src/index.js $npm_package_config_browserify_args",
+    "postbuild": "npm run minify:js",
+    "minify:js": "uglifyjs dist/backbone.readonly.js --compress > dist/backbone.readonly.min.js",
+    "test": "npm-run-all --parallel test:*",
+    "test:lint": "jshint src/*.js",
+    "test:jscs": "jscs src/*.js",
+    "test:karma": "karma start --single-run",
+    "start": "npm-run-all --parallel watch:*",
+    "watch:js": "watch 'npm run test:lint && npm run test:jscs' src/",
+    "watch:watchify": "watchify -v src/*.js $npm_package_config_browserify_args",
+    "watch:karma": "karma start"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "underscore": "global:_",
+    "jquery": "global:$",
+    "backbone": "global:Backbone"
+  }
+}
