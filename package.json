@@ -44,8 +44,6 @@
     "browserify_args": "-o dist/backbone.readonly.js -d -x jquery -x underscore -x backbone -s Backbone.ReadOnly"
   },
   "scripts": {
-    "preinstall": "",
-    "postinstall": "npm run build",
     "clean": "rimraf dist/*",
     "prebuild": "npm-run-all clean test",
     "build": "npm run build:js",
