@@ -2,7 +2,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 
 /**
- * @method Model~isNotImmutable
+ * @name Model~isNotImmutable
  * @private
  * @param {Object} options
  * @param {String} methodName

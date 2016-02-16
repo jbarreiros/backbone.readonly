@@ -3,7 +3,7 @@ var _ = require('underscore');
 var ReadOnlyModel = require('./Model');
 
 /**
- * @method Collection~isNotImmutable
+ * @name Collection~isNotImmutable
  * @private
  * @param {Object} options
  * @param {String} methodName
