@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Read-only backbone models and collections",
   "main": "src/index.js",
-  "browser": "dist/backbone.readonly.min.js",
   "keywords": [
     "backbone"
   ],
