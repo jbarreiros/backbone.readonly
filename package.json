@@ -14,6 +14,7 @@
     "browserify-shim": "^3.8.12",
     "chai": "^3.5.0",
     "jscs": "^2.9.0",
+    "jsdoc": "^3.4.0",
     "jshint": "^2.9.1",
     "karma": "^0.13.19",
     "karma-browserify": "^5.0.1",
@@ -56,7 +57,8 @@
     "start": "npm-run-all --parallel watch:*",
     "watch:js": "watch 'npm run test:lint && npm run test:jscs' src/",
     "watch:watchify": "watchify -v src/*.js $npm_package_config_browserify_args",
-    "watch:karma": "karma start"
+    "watch:karma": "karma start",
+    "jsdoc": "jsdoc src/*.js -d build-reports/jsdoc"
   },
   "browserify": {
     "transform": [
