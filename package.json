@@ -7,8 +7,17 @@
     "backbone"
   ],
   "author": "John Barreiros <johnbarreiros2@gmail.com>",
-  "private": true,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbarreiros/backbone.readonly"
+  },
+  "bugs": {
+    "url": "https://github.com/jbarreiros/backbone.readonly/issues"
+  },
+  "homepage": {
+    "url": "https://github.com/jbarreiros/backbone.readonly"
+  },
   "devDependencies": {
     "browserify": "^13.0.0",
     "browserify-shim": "^3.8.12",

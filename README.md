@@ -15,8 +15,6 @@ try to plug every hole. For example, this plugin does nothing to stop access to
 
 The plugin is built as a Node.js module and bundled for the browser with Browserify. When using the plugin via the browser, it expects that JQuery, Underscore and Backbone are already available; they are not bundled with the plugin.
 
-*Todo: publish to npm and bower (and update this section)*
-
 # Example
 
 ## Browser

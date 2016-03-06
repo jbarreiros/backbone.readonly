@@ -1,12 +1,11 @@
 {
   "name": "backbone.readonly",
   "description": "Read-only backbone models and collections",
-  "main": "dist/backbone.readonly.min.js",
+  "main": "dist/backbone.readonly.js",
   "authors": [
     "John Barreiros <johnbarreiros2@gmail.com>"
   ],
   "license": "MIT",
-  "private": true,
   "keywords": [
     "backbone"
   ],
@@ -15,7 +14,7 @@
     "globals",
     "node"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/jbarreiros/backbone.readonly",
   "ignore": [
     "**/.*",
     "node_modules",
