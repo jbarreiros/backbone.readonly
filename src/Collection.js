@@ -81,10 +81,6 @@ module.exports = Backbone.Collection.extend(
    * @return {Array}
    */
   remove: function(models, options) {
-    if (_.isEmpty(models)) {
-      return [];
-    }
-
     if (isNotImmutable(options, 'remove')) {
       return Backbone.Collection.prototype.remove.apply(this, arguments);
     }
@@ -98,10 +94,6 @@ module.exports = Backbone.Collection.extend(
    * @return {Array}
    */
   set: function(models, options) {
-    if (_.isEmpty(models)) {
-      return [];
-    }
-
     if (isNotImmutable(options, 'set')) {
       return Backbone.Collection.prototype.set.apply(this, arguments);
     }
@@ -115,10 +107,6 @@ module.exports = Backbone.Collection.extend(
    * @return {Array}
    */
   reset: function(models, options) {
-    if (_.isEmpty(models)) {
-      return [];
-    }
-
     if (isNotImmutable(options, 'reset')) {
       return Backbone.Collection.prototype.reset.apply(this, arguments);
     }
@@ -132,10 +120,6 @@ module.exports = Backbone.Collection.extend(
    * @return {Backbone.Model}
    */
   create: function(model, options) {
-    if (_.isEmpty(model)) {
-      return;
-    }
-
     if (isNotImmutable(options, 'create')) {
       return Backbone.Collection.prototype.create.apply(this, arguments);
     }
