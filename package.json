@@ -19,8 +19,6 @@
     "url": "https://github.com/jbarreiros/backbone.readonly"
   },
   "devDependencies": {
-    "browserify": "^13.0.0",
-    "browserify-shim": "^3.8.12",
     "chai": "^3.5.0",
     "jscs": "^2.9.0",
     "jsdoc": "^3.4.0",
@@ -42,21 +40,19 @@
     "sinon": "^1.17.3",
     "uglify-js": "^2.6.1",
     "watch": "^0.17.1",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "webpack": "^1.13.0"
   },
   "dependencies": {
     "backbone": "^1.2.3",
     "underscore": "^1.8.3",
     "jquery": "^2.2.0"
   },
-  "config": {
-    "browserify_args": "-o dist/backbone.readonly.js -d -x jquery -x underscore -x backbone -s Backbone.ReadOnly"
-  },
   "scripts": {
     "clean": "rimraf dist/*",
     "prebuild": "npm-run-all clean test",
     "build": "npm run build:js",
-    "build:js": "browserify src/index.js $npm_package_config_browserify_args",
+    "build:js": "webpack",
     "postbuild": "npm run minify:js",
     "minify:js": "uglifyjs dist/backbone.readonly.js --compress > dist/backbone.readonly.min.js",
     "test": "npm-run-all --parallel test:*",
@@ -68,15 +64,5 @@
     "watch:watchify": "watchify -v src/*.js $npm_package_config_browserify_args",
     "watch:karma": "karma start",
     "jsdoc": "jsdoc src/*.js -d build-reports/jsdoc"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "browserify-shim": {
-    "underscore": "global:_",
-    "jquery": "global:$",
-    "backbone": "global:Backbone"
   }
 }
