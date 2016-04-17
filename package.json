@@ -40,7 +40,6 @@
     "sinon": "^1.17.3",
     "uglify-js": "^2.6.1",
     "watch": "^0.17.1",
-    "watchify": "^3.7.0",
     "webpack": "^1.13.0"
   },
   "dependencies": {
