@@ -1,16 +1,12 @@
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ['mocha', 'chai', 'sinon', 'browserify'],
+    frameworks: ['mocha', 'chai', 'sinon'],
     files: [
       'test/**/*.spec.js',
     ],
     preprocessors: {
-      'test/**/*.spec.js': ['browserify', 'coverage']
-    },
-    browserify: {
-      debug: true,
-      ignoreTransform: 'browserify-shim',
+      'test/**/*.spec.js': ['webpack', 'coverage']
     },
     reporters: ['mocha', 'coverage'],
     mochaReporter: {
