@@ -1,4 +1,5 @@
 var Backbone = require('backbone');
+var _ = require('underscore');
 var ReadOnlyModel = require('./Model');
 
 /**
@@ -53,7 +54,7 @@ module.exports = Backbone.Collection.extend(
     options = options || {};
     options.overrideImmutability = true;
 
-    if (!options.model) {
+    if (!('model' in this) && !options.model) {
       options.model = ReadOnlyModel;
     }
 

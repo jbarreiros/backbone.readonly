@@ -99,4 +99,14 @@ describe('ReadOnly.Collection', function() {
       });
     });
   });
+
+  describe('when extending ReadOnly.Collection', function() {
+    it('should work with a custom Model', function() {
+      var Model = Backbone.Model.extend({someRandomProp: 'success'});
+      var Collection = TestCollection.extend({model: Model});
+      var list = new Collection([{id: 1, name: 'John Doe'}]);
+
+      expect(list.get(1).someRandomProp).to.equal('success');
+    });
+  });
 });
