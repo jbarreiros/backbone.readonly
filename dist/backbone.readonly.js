@@ -208,6 +208,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	var Backbone = __webpack_require__(1);
+	var _ = __webpack_require__(3);
 	var ReadOnlyModel = __webpack_require__(2);
 
 	/**
@@ -262,7 +263,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    options = options || {};
 	    options.overrideImmutability = true;
 
-	    if (!options.model) {
+	    if (!('model' in this) && !options.model) {
 	      options.model = ReadOnlyModel;
 	    }
 
