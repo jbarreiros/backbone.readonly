@@ -249,6 +249,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Backbone.Collection.extend(
 	/** @lends Collection.prototype */
 	{
+	  model: ReadOnlyModel,
+
 	  /**
 	   * Overridden to pass the override option to allow setting the passed
 	   * models (if any).
@@ -262,11 +264,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  constructor: function(models, options) {
 	    options = options || {};
 	    options.overrideImmutability = true;
-
-	    if (!('model' in this) && !options.model) {
-	      options.model = ReadOnlyModel;
-	    }
-
 	    Backbone.Collection.call(this, models, options);
 	  },
 
