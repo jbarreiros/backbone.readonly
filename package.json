@@ -60,7 +60,6 @@
     "test:karma": "karma start --single-run",
     "start": "npm-run-all --parallel watch:*",
     "watch:js": "watch 'npm run test:lint && npm run test:jscs' src/",
-    "watch:watchify": "watchify -v src/*.js $npm_package_config_browserify_args",
     "watch:karma": "karma start",
     "jsdoc": "jsdoc src/*.js -d build-reports/jsdoc"
   }
