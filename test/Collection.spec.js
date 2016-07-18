@@ -101,12 +101,17 @@ describe('ReadOnly.Collection', function() {
   });
 
   describe('when extending ReadOnly.Collection', function() {
+    it('should default model attribute to ReadOnly.Model', function() {
+      expect(collection.get(1)).to.be.an.instanceof(ReadOnly.Model);
+    });
+
     it('should work with a custom Model', function() {
       var Model = Backbone.Model.extend({someRandomProp: 'success'});
       var Collection = TestCollection.extend({model: Model});
       var list = new Collection([{id: 1, name: 'John Doe'}]);
 
       expect(list.get(1).someRandomProp).to.equal('success');
+      expect(list.get(1)).to.be.an.instanceof(Model);
     });
   });
 });

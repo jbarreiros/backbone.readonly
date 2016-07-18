@@ -41,6 +41,11 @@ module.exports = Backbone.Collection.extend(
 /** @lends Collection.prototype */
 {
   /**
+   * @type {ReadOnly.Model}
+   */
+  model: ReadOnlyModel,
+
+  /**
    * Overridden to pass the override option to allow setting the passed
    * models (if any).
    *
@@ -53,11 +58,6 @@ module.exports = Backbone.Collection.extend(
   constructor: function(models, options) {
     options = options || {};
     options.overrideImmutability = true;
-
-    if (!('model' in this) && !options.model) {
-      options.model = ReadOnlyModel;
-    }
-
     Backbone.Collection.call(this, models, options);
   },
 
